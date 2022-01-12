@@ -25,6 +25,7 @@ public class ProducerSessionHandler extends StompSessionHandlerAdapter {
         logger.info("New session established : " + session.getSessionId());
         session.subscribe(topic + "/chat", this);
 
+
         while (true){
             session.send(topic + "/chat", getSampleMessage());
             try {
@@ -33,6 +34,7 @@ public class ProducerSessionHandler extends StompSessionHandlerAdapter {
                 e.printStackTrace();
             }
         }
+
     }
 
     @Override

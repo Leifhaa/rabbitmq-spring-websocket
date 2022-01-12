@@ -58,6 +58,7 @@ public class ConsumerSessionHandler extends StompSessionHandlerAdapter {
         return String.class;
     }
 
+
     @Override
     public void handleFrame(StompHeaders headers, Object payload) {
         Object msg = payload;
@@ -76,4 +77,5 @@ public class ConsumerSessionHandler extends StompSessionHandlerAdapter {
             }
         }
     }
+
 }
