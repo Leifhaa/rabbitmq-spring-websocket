@@ -1,9 +1,13 @@
 # How to run:
 ## 1. Set the following environment according to the rabbitMQ server (alternatively, just change property file):
 RABBITMQ_USERNAME
+
 RABBITMQ_PASSWORD
+
 RABBITMQ_HOST
+
 RABBITMQ_VHOST 
+
 
 ## 2. Start the spring boot application (SpringRabbitmqWebsocketApplication)
 Either start it by an IDE inside the server package or enter target folder and run the command:
