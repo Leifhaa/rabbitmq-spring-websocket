@@ -1,0 +1,6 @@
+com\example\demo\client\ClientApp.class
+com\example\demo\server\config\WebSocketConfig.class
+com\example\demo\client\StompClientsSimulation.class
+com\example\demo\client\ConsumerSessionHandler.class
+com\example\demo\client\ProducerSessionHandler.class
+com\example\demo\server\SpringRabbitmqWebsocketApplication.class

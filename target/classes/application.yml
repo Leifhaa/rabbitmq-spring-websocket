@@ -1,0 +1,6 @@
+spring:
+    rabbitmq:
+        password: ${RABBITMQ_PASSWORD}
+        username: ${RABBITMQ_USERNAME}
+        host: ${RABBITMQ_HOST}
+        virtual-host: ${RABBITMQ_VHOST}

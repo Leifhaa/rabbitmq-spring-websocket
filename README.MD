@@ -1,4 +1,4 @@
-#How to run:
+# How to run:
 ## 1. Set the following environment according to the rabbitMQ server (alternatively, just change property file):
 RABBITMQ_USERNAME
 RABBITMQ_PASSWORD
