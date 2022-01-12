@@ -13,6 +13,7 @@ Either start it by an IDE inside the server package or enter target folder and r
 
 ## 3. Start the Stomp clients simulator (ClientApp)
 Either start it from an IDE inside the client package or enter the target folder and run the command:
+
 ``
 java -cp demo-0.0.1-SNAPSHOT.jar -Dloader.main=com.example.demo.client.ClientApp org.springframework.boot.loader.PropertiesLauncher
 ``
@@ -34,5 +35,5 @@ No handler for: MESSAGE...
 ``
 
 
-###Credits
+### Credits
 The client implementation is inspired by baeldung (https://www.baeldung.com/websockets-api-java-spring-client)
