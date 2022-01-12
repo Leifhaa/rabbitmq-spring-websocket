@@ -9,7 +9,7 @@ import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
 
 
-public class StompClient {
+public class StompClientsSimulator {
     public static void main(String[] args) {
 
         //Create a producer session which should post alot of messages on the exchange
@@ -22,6 +22,16 @@ public class StompClient {
 
 
         new Scanner(System.in).nextLine(); // Don't close immediately.
+    }
+
+    private static void StartClients(){
+        //Create a producer session which should post alot of messages on the exchange
+        ProducerSessionHandler producerSession = new ProducerSessionHandler();
+        CreateStompClient(producerSession);
+
+        //Create a consumer session which should subscribe to messages on the exchange
+        ConsumerSessionHandler consumerSession = new ConsumerSessionHandler();
+        CreateStompClient(consumerSession);
     }
 
     private static void CreateStompClient(StompSessionHandler sessionHandler){
