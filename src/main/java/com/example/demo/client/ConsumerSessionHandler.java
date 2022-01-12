@@ -31,10 +31,11 @@ public class ConsumerSessionHandler extends StompSessionHandlerAdapter {
 
     private StompSession.Subscription subscription;
 
+    public Boolean hasFailed = false;
+
     @Override
     public void afterConnected(StompSession session, StompHeaders connectedHeaders) {
         logger.info("New session established : " + session.getSessionId());
-
         this.session = session;
         subscribe();
     }
@@ -51,6 +52,7 @@ public class ConsumerSessionHandler extends StompSessionHandlerAdapter {
     @Override
     public void handleException(StompSession session, StompCommand command, StompHeaders headers, byte[] payload, Throwable exception) {
         logger.error("Got an exception on session handler: " + name, exception);
+        hasFailed = true;
     }
 
     @Override
@@ -61,8 +63,9 @@ public class ConsumerSessionHandler extends StompSessionHandlerAdapter {
 
     @Override
     public void handleFrame(StompHeaders headers, Object payload) {
-        Object msg = payload;
         logger.info("Received : " + payload);
+
+        //After 10 messages, we close subscription and create a new one.
         synchronized (this){
             messageCounter++;
             if (messageCounter > 10){

@@ -44,22 +44,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- Dependencies for client -->
-		<!--
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-websocket</artifactId>
-			<version>5.2.19.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-messaging</artifactId>
-			<version>5.2.19.RELEASE</version>
-		</dependency>
-		-->
-
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>

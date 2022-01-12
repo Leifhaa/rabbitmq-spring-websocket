@@ -9,4 +9,5 @@ public class SpringRabbitmqWebsocketApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringRabbitmqWebsocketApplication.class, args);
 	}
+
 }

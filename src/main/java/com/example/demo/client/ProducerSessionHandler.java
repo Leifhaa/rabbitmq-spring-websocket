@@ -23,8 +23,6 @@ public class ProducerSessionHandler extends StompSessionHandlerAdapter {
     @Override
     public void afterConnected(StompSession session, StompHeaders connectedHeaders) {
         logger.info("New session established : " + session.getSessionId());
-        session.subscribe(topic + "/chat", this);
-
 
         while (true){
             session.send(topic + "/chat", getSampleMessage());
@@ -34,7 +32,6 @@ public class ProducerSessionHandler extends StompSessionHandlerAdapter {
                 e.printStackTrace();
             }
         }
-
     }
 
     @Override
@@ -43,20 +40,10 @@ public class ProducerSessionHandler extends StompSessionHandlerAdapter {
     }
 
     @Override
-    public Type getPayloadType(StompHeaders headers) {
-        return Message.class;
-    }
-
-    @Override
     public void handleFrame(StompHeaders headers, Object payload) {
-        Message msg = (Message) payload;
-        logger.info("Received : " + msg.getText() + " from : " + msg.getFrom());
+        logger.info("Received : " + payload);
     }
 
-    /**
-     * A sample message instance.
-     * @return instance of <code>Message</code>
-     */
     private String getSampleMessage() {
         return "Hello from " + name;
     }
