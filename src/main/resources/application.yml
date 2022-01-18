@@ -4,3 +4,6 @@ spring:
         username: ${RABBITMQ_USERNAME}
         host: ${RABBITMQ_HOST}
         virtual-host: ${RABBITMQ_VHOST}
+logging:
+    level:
+        root: trace
